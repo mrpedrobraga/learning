@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { AppService, MazurService } from './app.service';
 
 @Controller()
@@ -14,7 +14,8 @@ export class AppController {
   }
 
   @Get('/mazur')
-  getMazur(): string {
-    return this.mazurService.getScream();
+  getMazur(@Query('prop') prop: string): string {
+    console.log(`The property is '${prop}'.`);
+    return this.mazurService.getProp(prop);
   }
 }

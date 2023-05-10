@@ -10,3 +10,10 @@ export class AppService {
     return 'Goodbye...';
   }
 }
+
+@Injectable()
+export class MazurService {
+  getScream(): string {
+    return 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa';
+  }
+}
